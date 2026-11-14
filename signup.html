@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Dear Diary</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <div class="login-flower">✿</div>
+
+        <p class="login-label">YOUR STORY STARTS HERE</p>
+
+        <h1>Create your <span>space.</span></h1>
+
+        <p class="login-subtitle">
+            A little place that belongs entirely to you.
+        </p>
+
+        <form id="signup-form">
+
+            <label for="full-name">YOUR NAME</label>
+            <input type="text" id="full-name"
+                placeholder="What should we call you?" required>
+
+            <label for="signup-email">EMAIL ADDRESS</label>
+            <input type="email" id="signup-email"
+                placeholder="Enter your email" required>
+
+            <label for="signup-password">CREATE PASSWORD</label>
+<div class="password-wrapper">
+    <input type="password" id="signup-password" placeholder="At least 8 characters" minlength="8" required>
+    <button type="button" class="toggle-signup-password" data-target="signup-password">Show</button>
+</div>
+
+<label for="confirm-password">CONFIRM PASSWORD</label>
+<div class="password-wrapper">
+    <input type="password" id="confirm-password" placeholder="Enter your password again" required>
+    <button type="button" class="toggle-signup-password" data-target="confirm-password">Show</button>
+</div>
+
+            <label for="confirm-password">CONFIRM PASSWORD</label>
+            <input type="password" id="confirm-password"
+                placeholder="Enter your password again" required>
+
+            <button type="submit" class="login-button">
+                Create my diary →
+            </button>
+
+            <p id="signup-message"></p>
+
+        </form>
+
+        <p class="signup-text">
+            Already have an account?
+            <a href="login.html">Log in</a>
+        </p>
+
+        <p class="login-footer">your little universe awaits ♡</p>
+
+    </main>
+
+    <script src="signup.js"></script>
+
+</body>
+</html>

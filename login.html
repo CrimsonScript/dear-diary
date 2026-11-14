@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Dear Diary</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body class="login-page">
+
+    <div class="moon-decoration">☾</div>
+
+    <main class="login-container">
+
+        
+        <p class="login-label">YOUR LITTLE UNIVERSE</p>
+
+        <h1>Welcome <span>back.</span></h1>
+
+        <p class="login-subtitle">
+            Your thoughts, dreams and little secrets are waiting.
+        </p>
+
+        <form id="login-form">
+
+            <label for="email">EMAIL ADDRESS</label>
+            <input type="email" id="email"
+                placeholder="Enter your email" required>
+
+            <label for="password">PASSWORD</label>
+
+            <div class="password-wrapper">
+                <input type="password" id="password"
+                    placeholder="Enter your password" required>
+
+                <button type="button" id="toggle-password">
+                    Show
+                </button>
+            </div>
+
+            <div class="login-options">
+                <label class="remember-label">
+                    <input type="checkbox" id="remember">
+                    Remember me
+                </label>
+
+                <a href="#" id="forgot-password">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="login-button">
+                Enter my diary →
+            </button>
+
+            <p id="login-message"></p>
+
+        </form>
+
+        <p class="signup-text">
+            New here?
+            <a href="signup.html">Create an account</a>
+        </p>
+
+        <p class="login-footer">a little space, just for you ♡</p>
+
+    </main>
+
+    <script src="login.js"></script>
+
+</body>
+</html>

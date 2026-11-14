@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DearDiary | Your Private Space</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            dear<span>diary.</span>
+        </div>
+
+        <p class="nav-label">YOUR SPACE</p>
+
+       
+<nav>
+    <a href="#home" class="active">
+        <span>⌂</span> Overview
+    </a>
+
+    <a href="#gallery">
+        <span>▧</span> My gallery
+    </a>
+
+    <a href="#calendar">
+        <span>▦</span> Calendar
+    </a>
+
+    <a href="#write">
+        <span>✎</span> Writing room
+    </a>
+
+    <a href="#memories">
+        <span>♡</span> Memories
+    </a>
+
+    <a href="#moods">
+        <span>☾</span> Mood garden
+    </a>
+
+    <a href="#bucketlist">
+        <span>✧</span> Bucket list
+    </a>
+
+    <a href="#wins">
+        <span>★</span> Little wins
+    </a>
+
+<a href="#appearance">
+    <span>⚙</span> Appearance
+</a>
+
+</nav>
+
+
+        <div class="sidebar-quote">
+            <span>✦ A LITTLE REMINDER</span>
+            <p>
+                You don't have to have it all figured out.
+                Just keep writing.
+            </p>
+        </div>
+
+        <div class="sidebar-bottom">
+            <span class="profile-icon">D</span>
+            <div>
+                <strong>Your little space</strong>
+                <small>Just for you ♡</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN DASHBOARD -->
+    <main class="main-content" id="home">
+
+        
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <div>
+                <p class="date" id="current-date"></p>
+                <p class="time" id="current-time"></p>
+            </div>
+
+            <div class="topbar-note">
+                YOUR PERSONAL JOURNAL
+                <span>✦</span>
+            </div>
+        </header>
+
+
+        <!-- WELCOME -->
+        <section class="welcome">
+
+            <div class="welcome-text">
+                <p class="eyebrow">A SPACE TO BE YOURSELF</p>
+
+                <h1 id="welcome-greeting">Good to see you <span>again.</span></h1>
+
+
+                <p>
+                    Take a breath. Leave the outside world behind.
+                    This little space belongs entirely to you.
+                </p>
+
+                <button onclick="showWritingRoom()">
+                    Write something <span>→</span>
+                </button>
+            </div>
+
+           <div class="welcome-decoration">
+    <span>☾</span>
+    <p>your thoughts are safe here.</p>
+
+</div>
+
+        </section>
+
+
+        
+        <!-- STATISTICS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">✎</div>
+                <div>
+                    <h3 id="entry-count">0</h3>
+                    <p>Journal entries</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">♡</div>
+                <div>
+                    <h3 id="favourite-count">0</h3>
+                    <p>Favourite moments</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">◷</div>
+                <div>
+                    <h3 id="daycount">0</h3>
+                    <p>Days journaling</p>
+                </div>
+            </div>
+
+        </section>
+
+
+<!-- MY GALLERY -->
+<section class="gallery-section panel" id="gallery">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">YOUR LITTLE COLLECTION</p>
+            <h2>My gallery</h2>
+        </div>
+
+        <span class="heading-icon">▧</span>
+    </div>
+
+    <p class="section-description">
+        Little moments, places and faces you never want to forget.
+    </p>
+
+    <div class="gallery-upload">
+        <label for="photo-upload">
+            <span>＋</span>
+            Add photographs
+        </label>
+
+        <input
+            type="file"
+            id="photo-upload"
+            accept="image/*"
+            multiple
+        >
+    </div>
+
+    <div id="photo-gallery" class="photo-gallery">
+        <p class="gallery-empty">
+            Your memories will find a home here. ♡
+        </p>
+    </div>
+
+</section>
+
+
+
+<!-- MY CALENDAR -->
+<section class="calendar-section panel" id="calendar">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">YOUR DAYS, YOUR STORY</p>
+            <h2>My calendar</h2>
+        </div>
+
+        <span class="heading-icon">▦</span>
+    </div>
+
+    <p class="section-description">
+        Keep track of the days that matter to you.
+    </p>
+
+    <div class="calendar-top">
+        <button type="button" id="prev-month">←</button>
+
+        <h3 id="calendar-month">October 2026</h3>
+
+        <button type="button" id="next-month">→</button>
+    </div>
+
+    <div class="calendar-weekdays">
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+    </div>
+
+    <div id="calendar-days" class="calendar-days"></div>
+
+    <div class="calendar-events">
+
+        <p class="eyebrow">YOUR PLANS & SPECIAL DAYS</p>
+
+        <h3 id="selected-date">
+            Select a date
+        </h3>
+
+        <div id="event-list"></div>
+
+        <div class="event-form">
+
+            <input
+                type="text"
+                id="event-title"
+                placeholder="What's happening?"
+            >
+
+            <select id="event-type">
+                <option value="Personal">Personal</option>
+                <option value="Birthday">Birthday</option>
+                <option value="School">School</option>
+                <option value="Important">Important</option>
+                <option value="Fun">Fun</option>
+            </select>
+
+            <button type="button" id="add-event" class="save-button">
+                Add to calendar →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- BUCKET LIST -->
+<section class="bucket-section panel" id="bucketlist">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">THINGS TO LOOK FORWARD TO</span>
+            <h2>My bucket list <span>♡</span></h2>
+            <p>Little dreams, big adventures, everything in between.</p>
+        </div>
+    </div>
+
+    <div class="bucket-input">
+        <input type="text" id="bucket-input"
+               placeholder="Something I want to do...">
+
+        <button id="add-bucket" class="save-button">
+            Add to my list →
+        </button>
+    </div>
+
+    <div class="bucket-progress">
+        <p id="bucket-count">0 things completed</p>
+        <div class="progress-track">
+            <div id="bucket-progress-bar"></div>
+        </div>
+    </div>
+
+    <div id="bucket-list">
+        <p class="gallery-empty">Your dreams belong here. ♡</p>
+    </div>
+
+</section>
+
+<!-- LITTLE WINS -->
+<section class="wins-section panel" id="wins">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">GIVE YOURSELF SOME CREDIT</span>
+            <h2>Little wins <span>✧</span></h2>
+            <p>Every little thing deserves to be celebrated.</p>
+        </div>
+    </div>
+
+    <div class="wins-input">
+        <input type="text" id="win-input"
+               placeholder="Something I'm proud of...">
+
+        <button id="add-win" class="save-button">
+            Celebrate this win →
+        </button>
+    </div>
+
+    <div id="wins-list" class="wins-list">
+        <p class="gallery-empty">Your little victories will live here. ♡</p>
+    </div>
+
+</section>
+
+
+
+      
+        
+ <!-- DASHBOARD GRID -->
+        <div class="dashboard-grid">
+
+            <!-- WRITING ROOM -->
+            <section class="writing-room panel" id="write">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">LET IT OUT</p>
+                        <h2>Your writing room</h2>
+                    </div>
+
+                    <span class="heading-icon">✎</span>
+                </div>
+
+                <p class="section-description">
+                    Whatever is on your mind, it deserves a place here.
+                </p>
+
+                <input
+                    type="text"
+                    id="entry-title"
+                    placeholder="Give this moment a title..."
+                >
+
+                <textarea
+                    id="entry-content"
+                    placeholder="Dear diary, today..."
+                ></textarea>
+
+                <div class="mood-picker">
+                    <p>How are you feeling today?</p>
+
+                    <div class="mood-options">
+                        <button type="button" class="mood" onclick="setMood('happy')">😊</button>
+                        <button type="button" class="mood" onclick="setMood('sad')">😢</button>
+                        <button type="button" class="mood" onclick="setMood('angry')">😠</button>
+                        <button type="button" class="mood" onclick="setMood('excited')">🤩</button>
+                        <button type="button" class="mood" onclick="setMood('relaxed')">😌</button>
+                        <button type="button" class="mood" onclick="setMood('anxious')">😰</button>
+                        <button type="button" class="mood" onclick="setMood('bored')">😐</button>
+                        <button type="button" class="mood" onclick="setMood('confused')">😕</button>
+                        <button type="button" class="mood" onclick="setMood('grateful')">🙏</button>
+                    </div>
+                </div>
+
+                <button id="save-entry-btn" class="save-button" onclick="saveEntry()">
+                    Save this memory <span>→</span>
+                </button>
+
+            </section>
+
+            
+
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-column">
+
+                <section class="moods panel" id="moods">
+
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">A LITTLE REFLECTION</p>
+                            <h2>Your mood garden</h2>
+                        </div>
+
+                        <span class="heading-icon">☾</span>
+                    </div>
+
+                    <p class="section-description">
+                        A little record of how you've been feeling.
+                    </p>
+
+                    <div id="moodHistory"></div>
+
+                </section>
+
+
+                <section class="memories panel" id="memories">
+
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">LOOKING BACK</p>
+                            <h2>Little memories</h2>
+                        </div>
+
+                        <span class="heading-icon">♡</span>
+                    </div>
+
+                    <input
+                        type="search"
+                        id="searchEntries"
+                        placeholder="Search your memories..."
+                    >
+
+                    <div id="entrieslist"></div>
+
+                </section>
+
+
+
+      
+            </div>
+
+        </div>
+
+        <footer>
+            Made with care, just for you. <span>♡</span>
+        </footer>
+<!-- APPEARANCE STUDIO -->
+<section class="appearance-section panel" id="appearance">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">MAKE YOUR SPACE YOURS</p>
+            <h2>Appearance studio</h2>
+        </div>
+
+        <span class="heading-icon">✧</span>
+    </div>
+
+    <p class="section-description">
+        Choose the atmosphere of your little space.
+        Change it whenever you feel like something different.
+    </p>
+
+    <div class="appearance-subheading">
+        <h3>Explore themes</h3>
+        <p>Dark, light and everything in between.</p>
+    </div>
+
+    <div id="theme-grid" class="theme-grid">
+        <!-- Themes will be added using JavaScript -->
+    </div>
+
+    <div class="custom-theme">
+        <h3>Create your own palette</h3>
+
+        <label for="custom-background">Background colour</label>
+        <input type="color" id="custom-background" value="#111110">
+
+        <label for="custom-accent">Accent colour</label>
+        <input type="color" id="custom-accent" value="#bba985">
+
+        <label for="custom-text">Text colour</label>
+        <input type="color" id="custom-text" value="#eee9dd">
+
+        <button type="button" id="save-custom-theme" class="save-button">
+            Save my palette →
+        </button>
+    </div>
+
+</section>
+      
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
